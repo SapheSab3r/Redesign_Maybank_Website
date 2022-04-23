@@ -1,0 +1,465 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+
+.top-clear-fixed{
+    background-color: rgb(23, 23, 23);
+    padding-top: 4px;
+    padding-bottom: 4px;
+    float: right;
+    width: 100%;
+}
+
+.top-clear-links a{
+    font-size: 14px;
+    color: aliceblue;
+    margin: auto 2%;
+    text-decoration: underline;
+    
+}
+.top-clear-links a:hover{
+    font-size: 14px;
+    color: #f9cc28;;
+    margin: auto 2%;
+}
+
+/* nav bar */
+.sticky-bar {
+    display: block;
+    align-items: center;
+    background-color: #f9cc28;
+    z-index: 99;
+}
+
+.sticky-bar img{
+    display: block;
+    width: 25%;
+    transform: translateY(10%);
+    padding-left: 30px;
+    position: relative;
+}
+
+
+.dropDown{
+    /* border */
+    display: flex;
+    flex-direction: row;
+
+    /* reset list styles */
+    list-style-type: none;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+
+.dropDown li{
+    color:rgb(56, 56, 56);
+    font-weight: 600;
+    display: flex;
+
+    /* spacing */
+    padding: 20px;
+
+    /* used to position the sub-dropdown */
+    position: relative;
+    text-align: center;
+}
+
+
+.dropDown li:active{
+    color: black;
+}
+
+/* The sub dropdown */
+.dropDown ul {
+    /* Border */
+    border: 1px solid rgba(0, 0, 0, 0.3);
+
+    /* Hidden by default */
+    display: none;
+
+    /* Absolute position */
+    left: 0;
+    position: absolute;
+    top: 100%;
+
+    /* width */
+    width: 200px;
+
+}
+
+/* The second level sub dropdown */
+.dropDown ul ul {
+    left: 100%;
+    position: absolute;
+    top: 0;
+}
+
+
+/* Change background color of the list if hover */
+.dropDown li:hover{
+    background-color:  rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    z-index: 100;
+}
+
+/* Show the direct sub dropdown when hovering the list item */
+.dropDown li:hover > ul {
+    display: block;
+
+    /* style */
+    background-color: #f9d246;
+    border: none;
+    list-style: none;
+
+}
+
+
+
+
+/* main section */
+.image-slider{
+    display: block;
+    align-items: center;
+    width: 100%;
+    z-index: -100;
+    background-color: rgb(23, 23, 23);
+}
+.image-slider img{
+    align-items: center;
+}
+.carousel{
+    height: 86vh;
+    position: relative;
+}
+
+.carousel > ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.slide{
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: 200ms opacity ease-in-out;
+    -o-transition-delay: 200ms;
+    background-color: transparent;
+}
+
+.slide > img{
+    position: relative;
+    display: block;
+    margin-left: 25%;
+    width: 750px;
+    height: 560px;
+    z-index: -1000;
+    /* object-fit: cover;
+    object-position: 50% 25%; */
+}
+
+.slide[data-active]{
+    opacity: 1;
+    z-index: 1;
+    -o-transition-delay: 0ms;
+}
+
+.carousel-button{
+    position: absolute;
+    z-index: 2;
+    background: none;
+    border: none;
+    font-size: 3rem;
+    transform: translateY(-50%);
+    top: 50%;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    border-radius: 4%;
+    padding: 0 0.5rem;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.carousel-button:hover,
+.carousel-button:focus{
+    color: rgb(246, 246, 246);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.carousel-button:focus{
+    outline: 2px solid black;
+}
+
+.carousel-button.pre{
+    left: 1rem;
+}
+
+.carousel-button.next{
+    right: 1rem;
+}
+
+
+.view-news, .site-container, .ads-container{
+    margin: 0 10%;
+}
+
+/* news content */
+.view-news{
+    display: flex;
+    justify-content: center;
+    position: relative; 
+}
+
+.msg1, .msg2{
+    position: relative;
+    float: left;
+    padding: 20px;
+}
+
+.info-list a:hover, p:hover{
+    text-decoration: underline;
+}
+
+.msg1{
+    width: 30%;
+    border-right: solid 3px #f9cc28;
+}
+
+.msg2{
+    width: 70%;
+}
+
+
+.tab-body li{
+    list-style-type: square;
+    list-style-position: inside;
+    margin: 5px 0;
+}
+.tab-body p{
+    float: right;
+}
+
+.items{
+    display: grid;
+    font-size: 12px;
+    grid-auto-flow: column;
+    grid-auto-columns: 15%;
+    gap: 15px;
+    overflow-x: auto;
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    overscroll-behavior-inline: contain;
+}
+
+.items li{
+    display: flex;
+    border-radius: 5px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: #f3f0f0;
+    height: 100px;
+    font-weight: 700;
+}
+
+
+.items li:hover{
+    background-color: #464646;
+    color:#f3f0f0;
+    cursor: pointer;
+}
+
+.scroll{
+    margin-top: 6%;
+}
+
+.scroll a img{
+    display: block;
+    margin-left: 25%;
+    align-items: center;
+    position: relative;
+}
+
+.scroll-wrapper li{
+    list-style: none;
+}
+
+/* ad section */
+.ads-container{
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.3)), url(images/ourimpact.jpg);
+    height: 500px;
+    color: #f9cc28;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.ads-container .first{
+    color: #f3f0f0;
+    line-height: 80px;
+}
+.ads-container .second{
+    font-size: 18px;
+    color: #f3f0f0;
+    line-height: 40px;
+}
+
+.ads-container button{
+    background-color: #f9cc28;
+    border: solid 4px #f9cc28;
+    color:  rgb(23, 23, 23);
+    font-size: 20px;
+    margin-top: 2%;
+    padding: 1.4% 5%;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.ads-content button:hover{
+    background-color: transparent;
+    cursor: pointer;
+    border: solid 4px #f9cc28;
+    color: #f3f0f0;
+}
+
+
+.site-container{
+    padding: 2rem auto;
+    align-items: center;
+}
+
+.card-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+    gap: 2rem;
+}
+
+.card-img{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.card-img img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.box{
+    background-color: #f3f0f0;    
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.card-body{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+.card-body h3, p, a{
+    line-height: 140%;
+    margin-bottom: 2%;
+}
+.card-body a{
+    margin-top: 10%;
+    position: relative;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #f9cc28;
+    color:#f3f0f0;
+    border: solid 3px #f9cc28;
+    border-radius: 10px;
+    padding: 4%;
+}
+
+.card-body a:hover{
+    cursor: pointer;
+    background-color:  transparent;
+    border: solid 3px #f9cc28;
+    color: rgb(23, 23, 23);
+    box-shadow: 0 4px 20px 0 rgba(34, 68, 123, 0.5);
+    cursor: pointer;
+}
+
+.image-slider,
+.view-news,
+.card-container,
+.ads-container{
+    margin-bottom: 5%;
+}
+
+/* footer */
+footer{
+    background-color: rgb(23, 23, 23);
+    color: aliceblue;
+}
+
+.footer-container{
+    display: flex;
+    column-count: 3;
+}
+
+.logo-white{
+    width: 40%;
+} 
+
+.footer-container img{
+    margin-left: 5%;
+    width: 50%; 
+}
+
+.footer-blocks{
+    display: flex;
+    flex: initial;
+    justify-content: space-between;
+}
+
+
+.block{
+    display: block;
+    padding: 20px 0;
+    margin: 1% 5%;
+}
+
+.block h3{
+    margin-bottom: 8%;
+    font-size: large;
+}
+
+.menu-list li{
+    font-size: 14px;
+}
+
+.block li{
+    list-style: none;
+    line-height: 180%;
+}
+
+#block-block-1{
+    text-align: center; 
+    align-items: center;   
+    font-size: 12px;
+}
+#block-block-1 a{
+    color: aliceblue;
+    text-decoration: underline;
+    font-size: 12px;
+}
+
+
+.block li:hover{
+    cursor: pointer;
+    color:#f9cc28;
+}
